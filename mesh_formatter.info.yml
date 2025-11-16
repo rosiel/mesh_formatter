@@ -1,0 +1,6 @@
+name: MeSH formatter
+type: module
+description: "Formats a fields as links to searching NLM for that MeSH term."
+package: custom
+core_version_requirement: ^11
+
