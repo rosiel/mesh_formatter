@@ -1,0 +1,9 @@
+{
+  "name": "rosiel/mesh_formatter",
+  "description": "Field formatter that searches NLM for matching MeSH terms.",
+  "type": "drupal-module",
+  "require": {
+    "drupal/core": "^10.2 | ^11" ,
+  "license": "GPL-2.0-or-later"
+}
+

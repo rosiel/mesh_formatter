@@ -27,10 +27,15 @@ class MeshFormatter extends FormatterBase {
 
     foreach ($items as $delta => $item) {
       // Render each element as a link to NLM.
+      $search_term = $item->value;
+      // Remove slashes and anything following.
+      $search_term = preg_replace('/\/.*/', '', $search_term);
+      // Remove initial asterisk.
+      $search_term = preg_replace('/^[*]/','', $search_term);
       $element[$delta] = [
         '#type' => 'link',
         '#title' => $item->value,
-        '#url' => Url::fromUri('https://www.ncbi.nlm.nih.gov/mesh/', ['query' => ['term' => $item->value]]),
+        '#url' => Url::fromUri('https://www.ncbi.nlm.nih.gov/mesh/', ['query' => ['term' => $search_term]]),
         '#attributes' => [
           'target' => '_blank'
         ]
